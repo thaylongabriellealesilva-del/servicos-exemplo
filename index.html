@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sua Empresa | Site modelo</title>
+  <meta name="description" content="Modelo de site profissional para pequenas empresas e prestadores de serviço.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Os textos marcados com data-campo são preenchidos pelo script.js.
+       TROCAR: os dados ficam todos no objeto CONFIG, no topo do script.js. -->
+
+  <!-- Cabeçalho / menu fixo -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo"><span class="logo__mark" aria-hidden="true"></span><span data-campo="empresa">Sua Empresa</span></a>
+
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato" class="nav__cta">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Início -->
+    <section id="inicio" class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Atendimento em <span data-campo="cidade">Sua Cidade</span> e região</p>
+          <h1 data-campo="slogan">Qualidade, confiança e atendimento que faz a diferença</h1>
+          <p class="hero__subtitle">Soluções sob medida para você e sua família ou empresa, com orçamento sem compromisso e atendimento próximo.</p>
+          <div class="hero__actions">
+            <a href="#contato" class="btn btn--primary">Pedir orçamento</a>
+            <a href="#servicos" class="btn btn--ghost">Ver serviços</a>
+          </div>
+        </div>
+        <img class="hero__img" src="https://picsum.photos/seed/hero-empresa/720/540" width="720" height="540"
+             alt="Imagem de destaque da empresa" fetchpriority="high">
+      </div>
+    </section>
+
+    <!-- Apresentação + destaques -->
+    <section class="section">
+      <div class="container">
+        <div class="intro">
+          <h2>Por que escolher a <span data-campo="empresa">Sua Empresa</span>?</h2>
+          <p>Trabalhamos com transparência do primeiro contato à entrega. Cada cliente recebe atenção individual, prazos claros e um resultado de que pode se orgulhar.</p>
+        </div>
+        <ul class="highlights">
+          <li><strong>+10 anos</strong><span>de experiência</span></li>
+          <li><strong>+500</strong><span>clientes atendidos</span></li>
+          <li><strong>100%</strong><span>compromisso com a qualidade</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Serviços (cards gerados a partir de CONFIG.servicos) -->
+    <section id="servicos" class="section section--alt">
+      <div class="container">
+        <header class="section__header">
+          <h2>Nossos serviços</h2>
+          <p>Conheça o que podemos fazer por você.</p>
+        </header>
+        <div class="cards" id="lista-servicos"></div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+      <div class="container about">
+        <img src="https://picsum.photos/seed/sobre-empresa/640/480" width="640" height="480" loading="lazy"
+             alt="Foto da equipe ou do espaço da empresa">
+        <div>
+          <h2>Sobre nós</h2>
+          <p>A <span data-campo="empresa">Sua Empresa</span> nasceu em <span data-campo="cidade">Sua Cidade</span> com um propósito simples: oferecer um atendimento honesto, eficiente e de confiança. Aqui você conta a história do negócio, os valores e o que torna o seu trabalho especial.</p>
+          <ul class="checklist">
+            <li>Orçamento gratuito e sem compromisso</li>
+            <li>Atendimento rápido e personalizado</li>
+            <li>Cumprimento dos prazos combinados</li>
+            <li>Satisfação garantida</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria -->
+    <!-- TROCAR: substituir as imagens de placeholder por fotos reais (e ajustar o alt) -->
+    <section id="galeria" class="section section--alt">
+      <div class="container">
+        <header class="section__header">
+          <h2>Galeria</h2>
+          <p>Fotos dos trabalhos, produtos ou do espaço da empresa.</p>
+        </header>
+        <div class="gallery">
+          <img src="https://picsum.photos/seed/galeria1/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 1">
+          <img src="https://picsum.photos/seed/galeria2/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 2">
+          <img src="https://picsum.photos/seed/galeria3/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 3">
+          <img src="https://picsum.photos/seed/galeria4/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 4">
+          <img src="https://picsum.photos/seed/galeria5/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 5">
+          <img src="https://picsum.photos/seed/galeria6/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 6">
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos (gerados a partir de CONFIG.depoimentos) -->
+    <section id="depoimentos" class="section">
+      <div class="container">
+        <header class="section__header">
+          <h2>O que dizem nossos clientes</h2>
+        </header>
+        <div class="testimonials" id="lista-depoimentos"></div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section section--alt">
+      <div class="container contact">
+        <div class="contact__info">
+          <h2>Fale com a gente</h2>
+          <p>Preencha o formulário ou entre em contato diretamente.</p>
+          <ul class="contact__list">
+            <li><span>Telefone</span><a data-link="telefone" href="#">(00) 00000-0000</a></li>
+            <li><span>E-mail</span><a data-link="email" href="#">contato@suaempresa.com.br</a></li>
+            <li><span>Área de atendimento</span><span class="plain"><span data-campo="cidade">Sua Cidade</span> e região</span></li>
+            <li><span>Horário</span><span class="plain" data-campo="horario">Segunda a sábado, das 8h às 18h</span></li>
+          </ul>
+        </div>
+
+        <form id="form-orcamento" class="form" novalidate>
+          <div class="field">
+            <label for="nome">Nome *</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required minlength="2">
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="telefone">Telefone *</label>
+            <input id="telefone" name="telefone" type="tel" autocomplete="tel" inputmode="numeric"
+                   placeholder="(00) 00000-0000" required pattern="\(\d{2}\) \d{4,5}-\d{4}">
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="servico">Serviço desejado *</label>
+            <select id="servico" name="servico" required>
+              <option value="">Selecione</option>
+            </select>
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="mensagem">Mensagem *</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required minlength="10"
+                      placeholder="Conte brevemente o que você precisa"></textarea>
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Enviar pedido</button>
+          <p class="form__success" role="status" hidden>Obrigado! Recebemos seu pedido e entraremos em contato em breve.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="ano"></span> <span data-campo="empresa">Sua Empresa</span>. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp da empresa -->
+  <a class="whatsapp" data-link="whatsapp" href="#" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.8.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.7-.4z"/></svg>
+  </a>
+
+  <!-- Faixa de demonstração: aponta para VOCÊ (quem vende o site).
+       Para entregar o site final ao cliente, apague este bloco ou use demo: false no CONFIG. -->
+  <aside class="demo-bar" id="demo-bar" aria-label="Aviso de site modelo">
+    <p>
+      <strong>Este é um site demonstrativo.</strong>
+      <span class="demo-bar__detalhe">O seu é feito do seu jeito, com o nome, o logo, as cores e os serviços da sua loja.</span>
+    </p>
+    <a class="demo-bar__cta" data-link="vendedor" href="#" target="_blank" rel="noopener">Quero o meu: fale com <span data-campo="vendedorNome">a gente</span></a>
+    <button class="demo-bar__close" type="button" aria-label="Fechar aviso">&times;</button>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
