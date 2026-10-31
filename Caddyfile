@@ -1,0 +1,8 @@
+# Configuração do servidor do site (usada pelo Dockerfile).
+# "no-cache" faz o navegador sempre conferir se existe versão nova,
+# assim as atualizações aparecem na hora para os visitantes.
+:{$PORT:8080}
+
+root * /srv
+header Cache-Control "no-cache"
+file_server
