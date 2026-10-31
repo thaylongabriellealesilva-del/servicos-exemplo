@@ -4,17 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sua Empresa | Site modelo</title>
-  <meta name="description" content="Modelo de site profissional para pequenas empresas e prestadores de serviço.">
+  <meta name="description" content="Modelo de site profissional para lojas, pequenas empresas e prestadores de serviço.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Os textos marcados com data-campo são preenchidos pelo script.js.
        TROCAR: os dados ficam todos no objeto CONFIG, no topo do script.js. -->
 
-  <!-- Cabeçalho / menu fixo -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wpp" viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm5.8 15.7c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.8.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.7-.4z"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></symbol>
+    <symbol id="i-estrela" viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></symbol>
+  </svg>
+
+  <!-- Cabeçalho -->
   <header class="header">
     <div class="container header__inner">
-      <a href="#inicio" class="logo"><span class="logo__mark" aria-hidden="true"></span><span data-campo="empresa">Sua Empresa</span></a>
+      <a href="#inicio" class="logo">
+        <span class="logo__marca" aria-hidden="true" data-inicial>S</span>
+        <span data-campo="empresa">Sua Empresa</span>
+      </a>
 
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
         <span></span><span></span><span></span>
@@ -22,12 +34,12 @@
 
       <nav id="menu" class="nav" aria-label="Menu principal">
         <ul>
-          <li><a href="#inicio">Início</a></li>
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#galeria">Galeria</a></li>
           <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="#contato" class="nav__cta">Contato</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a data-link="whatsapp" href="#" class="nav__cta">Pedir orçamento</a></li>
         </ul>
       </nav>
     </div>
@@ -37,108 +49,189 @@
     <!-- Início -->
     <section id="inicio" class="hero">
       <div class="container hero__inner">
-        <div class="hero__text">
-          <p class="eyebrow">Atendimento em <span data-campo="cidade">Sua Cidade</span> e região</p>
-          <h1 data-campo="slogan">Qualidade, confiança e atendimento que faz a diferença</h1>
-          <p class="hero__subtitle">Soluções sob medida para você e sua família ou empresa, com orçamento sem compromisso e atendimento próximo.</p>
-          <div class="hero__actions">
-            <a href="#contato" class="btn btn--primary">Pedir orçamento</a>
-            <a href="#servicos" class="btn btn--ghost">Ver serviços</a>
+        <div class="hero__texto revelar">
+          <p class="selo-topo"><span class="pulso" aria-hidden="true"></span><span>Atendendo <span data-campo="cidade">Sua Cidade</span> e região</span></p>
+          <h1 data-campo="slogan">Qualidade e confiança que fazem a diferença</h1>
+          <p class="hero__sub">Soluções sob medida para você, sua família ou sua empresa. Atendimento próximo, prazos cumpridos e orçamento sem compromisso.</p>
+          <div class="hero__acoes">
+            <a class="btn btn--primario" data-link="whatsapp" href="#"><svg class="btn__ic"><use href="#i-wpp"/></svg>Pedir orçamento</a>
+            <a class="btn btn--claro" href="#servicos">Ver serviços</a>
+          </div>
+          <div class="hero__prova">
+            <div class="avatares" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div>
+              <div class="estrelas" aria-label="Nota 4,9 de 5"><svg><use href="#i-estrela"/></svg><svg><use href="#i-estrela"/></svg><svg><use href="#i-estrela"/></svg><svg><use href="#i-estrela"/></svg><svg><use href="#i-estrela"/></svg></div>
+              <p><strong>4,9</strong> de avaliação dos clientes</p>
+            </div>
           </div>
         </div>
-        <img class="hero__img" src="https://picsum.photos/seed/hero-empresa/720/540" width="720" height="540"
-             alt="Imagem de destaque da empresa" fetchpriority="high">
+        <div class="hero__visual revelar">
+          <img class="hero__img" src="https://picsum.photos/seed/hero-loja-2/760/900" width="760" height="900" alt="Foto de destaque da empresa" fetchpriority="high">
+          <div class="cartao-flutuante cartao-flutuante--1">
+            <span class="cartao-flutuante__ic">✓</span>
+            <div><strong>Orçamento grátis</strong><small>Resposta rápida no WhatsApp</small></div>
+          </div>
+          <div class="cartao-flutuante cartao-flutuante--2">
+            <strong>+10</strong><small>anos de<br>experiência</small>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Apresentação + destaques -->
-    <section class="section">
+    <!-- Diferenciais -->
+    <section class="faixa">
       <div class="container">
-        <div class="intro">
-          <h2>Por que escolher a <span data-campo="empresa">Sua Empresa</span>?</h2>
-          <p>Trabalhamos com transparência do primeiro contato à entrega. Cada cliente recebe atenção individual, prazos claros e um resultado de que pode se orgulhar.</p>
-        </div>
-        <ul class="highlights">
-          <li><strong>+10 anos</strong><span>de experiência</span></li>
-          <li><strong>+500</strong><span>clientes atendidos</span></li>
-          <li><strong>100%</strong><span>compromisso com a qualidade</span></li>
+        <ul class="diferenciais">
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Atendimento rápido</strong><span>Resposta no mesmo dia</span></div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><strong>Garantia</strong><span>Serviço com qualidade</span></div></li>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg><div><strong>Pix e cartão</strong><span>Facilidade no pagamento</span></div></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Perto de você</strong><span><span data-campo="cidade">Sua Cidade</span> e região</span></div></li>
         </ul>
       </div>
     </section>
 
     <!-- Serviços (cards gerados a partir de CONFIG.servicos) -->
-    <section id="servicos" class="section section--alt">
+    <section id="servicos" class="secao">
       <div class="container">
-        <header class="section__header">
-          <h2>Nossos serviços</h2>
-          <p>Conheça o que podemos fazer por você.</p>
+        <header class="secao__topo revelar">
+          <p class="rotulo">Nossos serviços</p>
+          <h2>O que podemos fazer por você</h2>
+          <p>Escolha o serviço e peça seu orçamento direto pelo WhatsApp.</p>
         </header>
-        <div class="cards" id="lista-servicos"></div>
+        <div class="servicos" id="lista-servicos"></div>
       </div>
     </section>
 
     <!-- Sobre -->
-    <section id="sobre" class="section">
-      <div class="container about">
-        <img src="https://picsum.photos/seed/sobre-empresa/640/480" width="640" height="480" loading="lazy"
-             alt="Foto da equipe ou do espaço da empresa">
-        <div>
-          <h2>Sobre nós</h2>
-          <p>A <span data-campo="empresa">Sua Empresa</span> nasceu em <span data-campo="cidade">Sua Cidade</span> com um propósito simples: oferecer um atendimento honesto, eficiente e de confiança. Aqui você conta a história do negócio, os valores e o que torna o seu trabalho especial.</p>
+    <section id="sobre" class="secao secao--alt">
+      <div class="container sobre">
+        <div class="sobre__fotos revelar">
+          <img class="sobre__foto1" src="https://picsum.photos/seed/sobre-loja-a/600/720" width="600" height="720" loading="lazy" alt="Foto da equipe ou do espaço da empresa">
+          <img class="sobre__foto2" src="https://picsum.photos/seed/sobre-loja-b/480/480" width="480" height="480" loading="lazy" alt="Foto de um trabalho realizado">
+        </div>
+        <div class="revelar">
+          <p class="rotulo">Sobre nós</p>
+          <h2>Uma história feita de <span class="destaque">confiança</span></h2>
+          <p>A <strong data-campo="empresa">Sua Empresa</strong> nasceu em <span data-campo="cidade">Sua Cidade</span> com um propósito simples: oferecer um atendimento honesto, eficiente e de confiança. Aqui você conta a história do negócio, os valores e o que torna o seu trabalho especial.</p>
           <ul class="checklist">
             <li>Orçamento gratuito e sem compromisso</li>
             <li>Atendimento rápido e personalizado</li>
             <li>Cumprimento dos prazos combinados</li>
             <li>Satisfação garantida</li>
           </ul>
+          <ul class="numeros">
+            <li><strong data-contar="10">0</strong><span>anos de experiência</span></li>
+            <li><strong data-contar="500">0</strong><span>clientes atendidos</span></li>
+            <li><strong data-contar="98" data-sufixo="%">0</strong><span>clientes satisfeitos</span></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Galeria -->
-    <!-- TROCAR: substituir as imagens de placeholder por fotos reais (e ajustar o alt) -->
-    <section id="galeria" class="section section--alt">
+    <!-- Como funciona -->
+    <section class="secao">
       <div class="container">
-        <header class="section__header">
-          <h2>Galeria</h2>
-          <p>Fotos dos trabalhos, produtos ou do espaço da empresa.</p>
+        <header class="secao__topo secao__topo--centro revelar">
+          <p class="rotulo">Como funciona</p>
+          <h2>Simples do começo ao fim</h2>
         </header>
-        <div class="gallery">
-          <img src="https://picsum.photos/seed/galeria1/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 1">
-          <img src="https://picsum.photos/seed/galeria2/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 2">
-          <img src="https://picsum.photos/seed/galeria3/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 3">
-          <img src="https://picsum.photos/seed/galeria4/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 4">
-          <img src="https://picsum.photos/seed/galeria5/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 5">
-          <img src="https://picsum.photos/seed/galeria6/600/450" width="600" height="450" loading="lazy" alt="Foto de trabalho realizado 6">
+        <ol class="passos">
+          <li class="revelar"><b>1</b><h3>Fale com a gente</h3><p>Chame no WhatsApp e conte o que você precisa.</p></li>
+          <li class="revelar"><b>2</b><h3>Receba o orçamento</h3><p>Enviamos um orçamento claro, sem surpresas.</p></li>
+          <li class="revelar"><b>3</b><h3>Pronto!</h3><p>Fazemos o serviço no prazo combinado, com garantia.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Galeria -->
+    <!-- TROCAR: substituir as imagens de exemplo por fotos reais (e ajustar o alt) -->
+    <section id="galeria" class="secao secao--alt">
+      <div class="container">
+        <header class="secao__topo revelar">
+          <p class="rotulo">Galeria</p>
+          <h2>Alguns dos nossos trabalhos</h2>
+        </header>
+        <div class="galeria revelar">
+          <img src="https://picsum.photos/seed/galeria-a1/800/800" width="800" height="800" loading="lazy" alt="Foto de trabalho realizado 1">
+          <img src="https://picsum.photos/seed/galeria-a2/600/600" width="600" height="600" loading="lazy" alt="Foto de trabalho realizado 2">
+          <img src="https://picsum.photos/seed/galeria-a3/600/600" width="600" height="600" loading="lazy" alt="Foto de trabalho realizado 3">
+          <img src="https://picsum.photos/seed/oficina-trabalho-4/600/600" width="600" height="600" loading="lazy" alt="Foto de trabalho realizado 4">
+          <img src="https://picsum.photos/seed/galeria-a5/600/600" width="600" height="600" loading="lazy" alt="Foto de trabalho realizado 5">
+          <img src="https://picsum.photos/seed/galeria-a6/600/600" width="600" height="600" loading="lazy" alt="Foto de trabalho realizado 6">
         </div>
       </div>
     </section>
 
     <!-- Depoimentos (gerados a partir de CONFIG.depoimentos) -->
-    <section id="depoimentos" class="section">
+    <section id="depoimentos" class="secao">
       <div class="container">
-        <header class="section__header">
-          <h2>O que dizem nossos clientes</h2>
+        <header class="secao__topo secao__topo--centro revelar">
+          <p class="rotulo">Depoimentos</p>
+          <h2>O que nossos clientes dizem</h2>
         </header>
-        <div class="testimonials" id="lista-depoimentos"></div>
+        <div class="depoimentos" id="lista-depoimentos"></div>
+      </div>
+    </section>
+
+    <!-- Chamada -->
+    <section class="chamada">
+      <div class="container chamada__inner revelar">
+        <div>
+          <h2>Pronto para começar?</h2>
+          <p>Peça seu orçamento agora. É rápido, grátis e sem compromisso.</p>
+        </div>
+        <a class="btn btn--branco" data-link="whatsapp" href="#"><svg class="btn__ic"><use href="#i-wpp"/></svg>Chamar no WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- Dúvidas -->
+    <section class="secao">
+      <div class="container duvidas">
+        <header class="secao__topo revelar">
+          <p class="rotulo">Dúvidas frequentes</p>
+          <h2>Perguntas comuns</h2>
+        </header>
+        <div class="revelar">
+          <details>
+            <summary>O orçamento é grátis?</summary>
+            <p>Sim. Você chama no WhatsApp, conta o que precisa e recebe o orçamento sem compromisso.</p>
+          </details>
+          <details>
+            <summary>Quais formas de pagamento vocês aceitam?</summary>
+            <p>Aceitamos Pix, cartão de débito e crédito.</p>
+          </details>
+          <details>
+            <summary>Vocês atendem a minha região?</summary>
+            <p>Atendemos <span data-campo="cidade">Sua Cidade</span> e região. Fale com a gente para confirmar o seu bairro.</p>
+          </details>
+          <details>
+            <summary>Qual o horário de atendimento?</summary>
+            <p data-campo="horario">Segunda a sábado, das 8h às 18h</p>
+          </details>
+        </div>
       </div>
     </section>
 
     <!-- Contato -->
-    <section id="contato" class="section section--alt">
-      <div class="container contact">
-        <div class="contact__info">
+    <section id="contato" class="secao secao--alt">
+      <div class="container contato">
+        <div class="revelar">
+          <p class="rotulo">Contato</p>
           <h2>Fale com a gente</h2>
-          <p>Preencha o formulário ou entre em contato diretamente.</p>
-          <ul class="contact__list">
+          <p class="contato__sub">Preencha o formulário e ele já chega pronto no nosso WhatsApp.</p>
+          <ul class="contato__lista">
             <li><span>Telefone</span><a data-link="telefone" href="#">(00) 00000-0000</a></li>
             <li><span>E-mail</span><a data-link="email" href="#">contato@suaempresa.com.br</a></li>
-            <li><span>Área de atendimento</span><span class="plain"><span data-campo="cidade">Sua Cidade</span> e região</span></li>
+            <li><span>Endereço</span><span class="plain" data-campo="endereco">Rua Exemplo, 123, Centro</span></li>
             <li><span>Horário</span><span class="plain" data-campo="horario">Segunda a sábado, das 8h às 18h</span></li>
           </ul>
+          <div class="mapa">
+            <iframe id="mapa" title="Mapa com a localização" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
 
-        <form id="form-orcamento" class="form" novalidate>
+        <form id="form-orcamento" class="form revelar" novalidate>
+          <h3>Peça seu orçamento</h3>
           <div class="field">
             <label for="nome">Nome *</label>
             <input id="nome" name="nome" type="text" autocomplete="name" required minlength="2">
@@ -163,22 +256,30 @@
                       placeholder="Conte brevemente o que você precisa"></textarea>
             <p class="field__error" aria-live="polite"></p>
           </div>
-          <button type="submit" class="btn btn--primary btn--full">Enviar pedido</button>
-          <p class="form__success" role="status" hidden>Obrigado! Recebemos seu pedido e entraremos em contato em breve.</p>
+          <button type="submit" class="btn btn--primario btn--cheio"><svg class="btn__ic"><use href="#i-wpp"/></svg>Enviar pelo WhatsApp</button>
+          <p class="form__success" role="status" hidden>Abrimos o WhatsApp com o seu pedido. É só tocar em enviar!</p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
+  <footer class="rodape">
+    <div class="container rodape__inner">
+      <a href="#inicio" class="logo logo--rodape">
+        <span class="logo__marca" aria-hidden="true" data-inicial>S</span>
+        <span data-campo="empresa">Sua Empresa</span>
+      </a>
+      <div class="rodape__redes">
+        <a data-link="instagram" href="#" aria-label="Instagram"><svg><use href="#i-insta"/></svg></a>
+        <a data-link="whatsapp" href="#" aria-label="WhatsApp"><svg><use href="#i-wpp"/></svg></a>
+      </div>
       <p>&copy; <span id="ano"></span> <span data-campo="empresa">Sua Empresa</span>. Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <!-- Botão flutuante do WhatsApp da empresa -->
-  <a class="whatsapp" data-link="whatsapp" href="#" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.8.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.7-.4z"/></svg>
+  <a class="whatsapp" data-link="whatsapp" href="#" aria-label="Falar pelo WhatsApp">
+    <svg><use href="#i-wpp"/></svg>
   </a>
 
   <!-- Faixa de demonstração: aponta para VOCÊ (quem vende o site).
@@ -188,7 +289,7 @@
       <strong>Este é um site demonstrativo.</strong>
       <span class="demo-bar__detalhe">O seu é feito do seu jeito, com o nome, o logo, as cores e os serviços da sua loja.</span>
     </p>
-    <a class="demo-bar__cta" data-link="vendedor" href="#" target="_blank" rel="noopener">Quero o meu: fale com <span data-campo="vendedorNome">a gente</span></a>
+    <a class="demo-bar__cta" data-link="vendedor" href="#">Quero o meu: fale com <span data-campo="vendedorNome">a gente</span></a>
     <button class="demo-bar__close" type="button" aria-label="Fechar aviso">&times;</button>
   </aside>
 
